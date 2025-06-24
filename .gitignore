@@ -1,0 +1,8 @@
+raw_datasets/cases_anonymized_txt_raw.tar.gz
+raw_datasets/cases_anonymised_raw_text
+raw_datasets/sent1
+raw_datasets/sent2
+raw_datasets/*.csv
+raw_datasets/*.pkl
+intermediate_datasets/*.pkl
+intermediate_datasets/*.csv

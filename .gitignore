@@ -9,4 +9,11 @@ intermediate_datasets/*.csv
 *.arrow
 *.json
 *.safetensors
-Models/bert/asylex-outcome/BERT512-out_first/vocab.txt
+*.csv
+*.pkl
+*.html
+*.png
+Models/**/**/**/*.txt
+embeddings/**/**/**/*.pkl
+results/**/**/*.txt
+*.log

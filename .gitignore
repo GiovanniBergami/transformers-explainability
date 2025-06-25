@@ -6,3 +6,7 @@ raw_datasets/*.csv
 raw_datasets/*.pkl
 intermediate_datasets/*.pkl
 intermediate_datasets/*.csv
+*.arrow
+*.json
+*.safetensors
+Models/bert/asylex-outcome/BERT512-out_first/vocab.txt

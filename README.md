@@ -1,6 +1,7 @@
 
 # transformers-explainability
 A multi-method explainability framework for transformer-based text classification models.
+It provides different XAI methods to create heatmaps that show which tokens are more relevant for the sake of the classification, and also uses the rationales (annotated ground truth) to evaluate the interpretation.
 
 [comment]: <> (add paper reference in the previous sentence and in the general info)
 
@@ -19,18 +20,31 @@ A multi-method explainability framework for transformer-based text classificatio
 This project is about explaining the choices made by text-classificators.
 It includes a complete pipeline:
 
-- Downloading datasets from Huggingface and Kagglehub
-- Cleaning and preparing the datasets
-- Fine-Tuning BERT and RoBERTa on the tasks
+- Downloading data from Huggingface and Kagglehub
+- Cleaning and preparing the 4 different datasets
+- Fine-Tuning BERT and RoBERTa on the prediction tasks
 - Applying the XAI methods to the classifications
-- Comparing the explanation with the human annotated ground truth and against already existing explanaiblity methods (SHAP,LIME) and rationales (part of the text annotated as relevant for the sake of the classification)
+- Comparing the explanation with the human annotated ground truth (so called rationales, part of the text annotated as relevant for the sake of the classification) and against already existing explanaiblity methods (SHAP,LIME)
 - Producing visual plots of the explanations
+- aggregate the performances of the XAI methods to compare them
 
 Different methods to explain the choices of the model are implemented. 
 
 [comment]: <> (More on that on the paper:)
 
 ## Some results
+
+In this example, the first sentence of the movie reviews dataset (sentiment2) has been classified using the model and then interpreted using the Thresholded Cosine Similarity Masking method. The yellow placeholders, with the written words "start" and "end", mark each sentence that is part of the rationales.
+
+<img src="readme_images/image2.png" alt="drawing" width="450"/>
+
+ Also, the distribution of the relevance scores of the tokens can be plotted, taking in consideration of their annotated rationale (relevant/non relevant). As we can see, tokens annotated as relevant actually achived higher relevance score
+
+<img src="readme_images/image.png" alt="drawing" width="350"/>
+
+The ROC curve is built considering the XAI method as a classifier that tries to predict if a token is relevant or not for the sake of the classification. Rationales are used as a ground truth.
+
+<img src="readme_images/image3.png" alt="drawing" width="350"/>
 
 ## Models
 The models used are BERT and RoBERTa:

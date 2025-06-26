@@ -2,6 +2,8 @@
 # transformers-explainability
 A multi-method explainability framework for transformer-based text classification models.
 
+[comment]: <> (add paper reference in the previous sentence and in the general info)
+
 ## Table of Contents
 * [General Info](#general-info)
 * [Some results](#some-results)
@@ -11,22 +13,22 @@ A multi-method explainability framework for transformer-based text classificatio
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Authors](#authors)
-* [Appendix](#appendix)
 
 
 ## General info
 This project is about explaining the choices made by text-classificators.
 It includes a complete pipeline:
 
-- Downloading datasets from Huggingface (sentiment classification on movie reviews and outcome and NORP classification from legal text datasets)
+- Downloading datasets from Huggingface and Kagglehub
 - Cleaning and preparing the datasets
 - Fine-Tuning BERT and RoBERTa on the tasks
 - Applying the XAI methods to the classifications
 - Comparing the explanation with the human annotated ground truth and against already existing explanaiblity methods (SHAP,LIME) and rationales (part of the text annotated as relevant for the sake of the classification)
 - Producing visual plots of the explanations
 
-Different methods to explain the choices of the model are implemented.
-More on that on the paper: (TODO add paper link)
+Different methods to explain the choices of the model are implemented. 
+
+[comment]: <> (More on that on the paper:)
 
 ## Some results
 
@@ -60,29 +62,21 @@ New methods:
 
 ## Technologies
 
-This project runs using: mettere tutte le librerie?
+This project runs using jupyter nb and the libraries indicated in the requirement txt.
 
 ## Setup
 
-You can clone the repo as it is, and then run the different .jpynb in the following order:
-
-- dataset_creator, to create the desired datasets.
-- train_and_test, to train the classification model
-- XAI, to use the different XAI methods and plot the heatmaps.
-
-#### Example:
-Given a dataset, a model and a XAI method, you should run:
-
-```
-prova
-```
-inside the main function.
+- Clone the repo
+- Install the libraries indicated in requirements.txt
+- start by running the main.jpynb cells in order, from the top to the bottom
+- You will download, clean and prepare the datasets
+- Using train_and_test.ipynb, create the classification model and save it in the correct folder
+- Use the different XAI methods to interpret the model and plot the heatmaps
 
 ## Authors
 
 - [@GiovanniBergami](https://www.github.com/GiovanniBergami)
 
-## Appendix
 
 
 

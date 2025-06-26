@@ -2,7 +2,7 @@
 # transformers-explainability
 A multi-method explainability framework for transformer-based text classification models.
 
-It provides different XAI methods to create heatmaps that show which tokens are more relevant for the sake of the classification, and also uses the rationales (annotated ground truth) to evaluate the interpretation.
+It provides different XAI methods to create heatmaps that show which tokens are more relevant for the sake of the classification, and also uses the rationales (annotated ground truth) to evaluate the interpretation and compare different XAI methods.
 
 [comment]: <> (add paper reference in the previous sentence and in the general info)
 
@@ -35,7 +35,7 @@ Different methods to explain the choices of the model are implemented.
 
 ## Some results
 
-In this example, the first sentence of the movie reviews dataset (sentiment2) has been classified using the model and then interpreted using the Thresholded Cosine Similarity Masking method. The yellow placeholders, with the written words "start" and "end", mark each sentence that is part of the rationales.
+In this example, the first sentence of the movie reviews dataset (sentiment2) has been classified using the model and then interpreted using the Thresholded Cosine Similarity Masking method. The yellow placeholders, with the written words "start" and "end", mark each part of the sentence that is human annotated as relevant.
 
 <img src="readme_images/image2.png" alt="drawing" width="450"/>
 
@@ -62,6 +62,13 @@ The datasets are:
     - legal court decision about:asylum requests: from this, the **asylex-outcome** dataset has been created. It is binary classification (accepted/rejected)
     - The annotated Nationality/Ethnicity/religion of the requester: from this,the **asylex-norp** dataset has been created. It is a multi label classification between different features of the requester
 
+Since the legal documents were too long to fit in the context length, different paragraph selection strategy have been adopted and then evaluated:
+
+- first (take the first 512 tokens)
+- last 512 tokens
+- cas (take a random part 512 tokens long)
+- rand (take a random part of 512 tokens, but assuring that it contains at least some tokens regarded as relevant by the annotations)
+
 ## Explainability Methods
 
 Already existing methods:
@@ -85,8 +92,8 @@ This project runs using jupyter nb and the libraries indicated in the requiremen
 - Install the libraries indicated in requirements.txt
 - start by running the main.jpynb cells in order, from the top to the bottom
 - You will download, clean and prepare the datasets
-- Using train_and_test.ipynb, create the classification model and save it in the correct folder
-- Use the different XAI methods to interpret the model and plot the heatmaps
+- Create the classification model and save it in the correct folder (this part requires you to moving to train_and_test.ipyn)
+- Go back to main.ipynb and use the different XAI methods to interpret the model and plot the heatmaps
 
 ## Authors
 

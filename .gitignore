@@ -12,7 +12,7 @@ intermediate_datasets/*.csv
 *.csv
 *.pkl
 *.html
-*.png
+results/**/**/**/*.png
 Models/**/**/**/*.txt
 embeddings/**/**/**/*.pkl
 results/**/**/*.txt

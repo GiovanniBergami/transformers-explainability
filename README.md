@@ -1,6 +1,7 @@
 
 # transformers-explainability
 A multi-method explainability framework for transformer-based text classification models.
+
 It provides different XAI methods to create heatmaps that show which tokens are more relevant for the sake of the classification, and also uses the rationales (annotated ground truth) to evaluate the interpretation.
 
 [comment]: <> (add paper reference in the previous sentence and in the general info)
